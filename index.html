@@ -14,8 +14,31 @@
       // 1.3. Подсчитывает и возвращает сумму элементов массива.
       // Число 0 (ноль) – считается числом, не останавливайте ввод значений при вводе ноля пользователем.
 
-      // Решение:
-
+      // Решение:10
+      let age = [];
+      for (let i = 0; ; i++) {
+        age[i] = prompt("Сколько вам лет?");
+        if (age[i] === null) {
+          break;
+        }
+        else if (age[i] === "") {
+          break;
+        }
+        else if (age[i] * 0 != 0) {
+          break;
+        }
+       /*else if (typeof (age) === "number"){ //Почему не работает такая конструкция?
+          break;
+        }*/
+      }
+      console.log(age);
+      console.log(`Элементов в массиве: ${age.length}`);
+      for (let i = 0; i < age.length; i++) {
+        console.log("Возраст: ${age[i]}"); //Почему не работает?
+      }
+      for (let name of age) {
+        console.log("Годы (for..of): ${name}"); //Почему не работает?
+      }
 
       // 2. Дан массив чисел
       let numbers = [0, -23, 5, 90, 104, 80, -55];
@@ -24,8 +47,30 @@
       // *Найдите среднее арифметическое элементов массива (сумма элементов, делить на количество).
 
       // Решение:
+      let max = numbers[0];
+      let min = numbers[0];
+      let sumMinus = 0;
+      let sumPlus = 0;
+      let sum = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        if (max < numbers[i]) {
+          max = numbers[i];
+        } else {
+          min = numbers[i];
+        }
+        if (numbers[i] < 0) {
+          sumMinus = (sumMinus + numbers[i]);
+        } else {
+          sumPlus = (sumPlus + numbers[i]);
+        }
+        sum = sum + numbers[i];
+      }
+      console.log('Максимум: ${max}'); //Почему не работает связка текст + переменная?
+      console.log('Минимум: ' + min);
+      console.log('Сумма отрицательных чисел: ' + sumMinus);
+      console.log('Сумма положительных чисел: ' + sumPlus);
+      console.log('Среднее арифметическое: ' + (sum / numbers.length));
 
-      
       // 3. Дан массив
       let languages = [
         "javascript",
@@ -42,7 +87,20 @@
       // *2. Выведите в консоль, сколько раз повторялся каждый элемент массива (включая удаленные элементы массива).
 
       // Решение:
+      let languages2 = [...new Set(languages)]; //Или нужно было использовать перебор?
+      console.log(languages2);
 
+  let result = {};
+for (let i = 0; i < languages.length; i++) //Как посчитать, ипользуя пройденный материал?
+{
+  let a = languages[i];
+    if (result[a] != undefined)
+        result[a]++;
+    else
+        result[a] = 1;
+}
+for (let key in result)
+   console.log(key + ' - ' + result[key]);
 
     </script>
   </head>
