@@ -16,29 +16,36 @@
 
       // Решение:10
       let age = [];
-      for (let i = 0; ; i++) {
-        age[i] = prompt("Сколько вам лет?");
-        if (age[i] === null) {
+      //for (let i = 0; ; i++) {
+      //age[i] = prompt("Сколько вам лет?");//Почему при +prompt перестают срабатывать условия if, но срабатывает объединенное условие?
+        /*if (isNaN(userInput) || userInput === null || userInput === ''){
+          break; //При таком вводе условий prompt исчезает даже после ввода числа. Почему?
+        }*/
+        /*if (age[i] === null) {
           break;
         }
-        else if (age[i] === "") {
+        else if (age[i] === '') {
           break;
         }
         else if (age[i] * 0 != 0) {
           break;
         }
-       /*else if (typeof (age) === "number"){ //Почему не работает такая конструкция?
+       else if (typeof (age) === "number"){ 
           break;
         }*/
+      //}
+     /* do {
+        age[i] = prompt("Сколько вам лет?");
       }
+      while (age[i] === null); //В чем ошибка?
       console.log(age);
       console.log(`Элементов в массиве: ${age.length}`);
       for (let i = 0; i < age.length; i++) {
-        console.log("Возраст: ${age[i]}"); //Почему не работает?
+        console.log(`Возраст: ${age[i]}`);
       }
       for (let name of age) {
-        console.log("Годы (for..of): ${name}"); //Почему не работает?
-      }
+        console.log(`Годы (for..of): ${name}`);
+      }*/
 
       // 2. Дан массив чисел
       let numbers = [0, -23, 5, 90, 104, 80, -55];
@@ -65,7 +72,7 @@
         }
         sum = sum + numbers[i];
       }
-      console.log('Максимум: ${max}'); //Почему не работает связка текст + переменная?
+      console.log(`Максимум: ${max}`);
       console.log('Минимум: ' + min);
       console.log('Сумма отрицательных чисел: ' + sumMinus);
       console.log('Сумма положительных чисел: ' + sumPlus);
@@ -87,11 +94,11 @@
       // *2. Выведите в консоль, сколько раз повторялся каждый элемент массива (включая удаленные элементы массива).
 
       // Решение:
-      let languages2 = [...new Set(languages)]; //Или нужно было использовать перебор?
+      let languages2 = [...new Set(languages)];
       console.log(languages2);
 
   let result = {};
-for (let i = 0; i < languages.length; i++) //Как посчитать, ипользуя пройденный материал?
+for (let i = 0; i < languages.length; i++)
 {
   let a = languages[i];
     if (result[a] != undefined)
@@ -101,7 +108,6 @@ for (let i = 0; i < languages.length; i++) //Как посчитать, ипол
 }
 for (let key in result)
    console.log(key + ' - ' + result[key]);
-
     </script>
   </head>
   <body></body>
