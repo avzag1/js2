@@ -17,10 +17,10 @@
       // Решение:10
       let age = [];
       //for (let i = 0; ; i++) {
-      //age[i] = prompt("Сколько вам лет?");//Почему при +prompt перестают срабатывать условия if, но срабатывает объединенное условие?
-        /*if (isNaN(userInput) || userInput === null || userInput === ''){
+      /*age[i] = prompt("Сколько вам лет?");//Почему при +prompt перестают срабатывать условия if, но срабатывает объединенное условие?
+        if (isNaN(age[i]) || age[i] === null || age[i] === ''){
           break; //При таком вводе условий prompt исчезает даже после ввода числа. Почему?
-        }*/
+        }
         /*if (age[i] === null) {
           break;
         }
@@ -34,10 +34,14 @@
           break;
         }*/
       //}
-     /* do {
-        age[i] = prompt("Сколько вам лет?");
+      do {
+        let userInput = prompt("Сколько вам лет?");
+       if (isNaN(userInput) || userInput === null || userInput === ''){
+        break;
+       }
+       age.push(userInput);
       }
-      while (age[i] === null); //В чем ошибка?
+      while (true);
       console.log(age);
       console.log(`Элементов в массиве: ${age.length}`);
       for (let i = 0; i < age.length; i++) {
@@ -45,7 +49,7 @@
       }
       for (let name of age) {
         console.log(`Годы (for..of): ${name}`);
-      }*/
+      }
 
       // 2. Дан массив чисел
       let numbers = [0, -23, 5, 90, 104, 80, -55];
